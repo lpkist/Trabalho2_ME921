@@ -1,5 +1,5 @@
 # Trabalho1_ME921
-Este repositório contém os códigos que foram desenvolvidos para a realização do trabalho 1 da disciplina ME921 (Aprendizado de Máquinas Não Supervisionado), cujo objetivo era clusterizar dados contínuos obtidos a partir de webscraping. Para isso, foram utilizados dados do canal do Youtube Formiga Atômica (com autorização do proprietário).
+Este repositório contém os códigos que foram desenvolvidos para a realização do trabalho 1 da disciplina ME921 (Aprendizado de Máquinas Não Supervisionado), cujo objetivo era clusterizar dados contínuos obtidos a partir de webscraping. O relatório está disponível no arquivo ```Trabalho 1.pdf```Para isso, foram utilizados dados do canal do Youtube Formiga Atômica (com autorização do proprietário).
 Para a reprodução dos resultados, deve-se executar os scripts na seguinte ordem:
  1. ```extraindo_os_dados.R```: este script extrai certas informações de todos os vídeos do canal, como título, número de curtidas, visualizações e comentários e url, salvando-as no arquivo ```links.csv```;
  2. ```baixa_audios.py```: este script lê o arquivo ```links.csv``` e, utilizando o pacote ```selenium```, abre 5 navegadores e os utiliza para baixar, simultaneamente, os vídeos convertidos em MP3. Os valores de espera em cada etapa devem ser ajustados de acordo com a velocidade de processamento do computador e da internet;
