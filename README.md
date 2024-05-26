@@ -1,4 +1,4 @@
-# Trabalho1_ME921
+# Trabalho2_ME921
 Este repositório contém os códigos que foram desenvolvidos para a realização do trabalho 2 da disciplina ME921 (Aprendizado de Máquinas Não Supervisionado), cujo objetivo era clusterizar dados normais obtidos a partir de webscraping. O relatório está disponível no arquivo ```Trabalho 2.pdf```Para isso, foram utilizados artigos publicados na revista Avian Research (https://www.sciopen.com/journal/2055-6187).
 Para a reprodução dos resultados, deve-se executar os scripts na seguinte ordem:
  1. ```baixa_artigos.py```: este script, utilizando o pacote ```selenium```, abre um navegador e o utiliza para acessar e baixar os artigos publicados desde 2022. Algumas configurações podem precisar ser alteradas, a depender do dispositivo em que ele for executado;
