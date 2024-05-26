@@ -53,7 +53,7 @@ plot(sort(mod3$uncertainty), ylim = c(0, 0.5), cex.axis = 1.5,
 C = 2
 p = 6
 1+(p+2*C)*(p-1)/2
-
+table(mod3$classification)
 nnve.out_1 <- cov.nnve(resultados2[-1])
 modelos_mclust_1 <- Mclust(resultados2[-1], 
                          initialization = list(noise = (nnve.out_1$classification == 0)))
@@ -96,10 +96,11 @@ max(pams$avg_sil)
 pams2 <- pam(scale(resultados2), 2)
 pairs(resultados2, col = ifelse(pams2$clustering == 1, "#1c86ee", "#cd0000"),
       cex.labels = 1.8, pch = pams2$clustering)
-
+pams2$medoids %>% round(2) %>% xtable::xtable()
+table(pams2$clustering)
 library(caret)
 confusionMatrix(factor(pams2$clustering, levels = 0:2),
-                factor(top$classification, levels = 0:2))$table %>% xtable::xtable()
+                factor(mod3$classification, levels = 0:2))$table %>% xtable::xtable()
 resultados3 <- sapply(resultados2, function(x) (x-min(x))/diff(range(x)))
 cbind(resultados3, data.frame(Cluster = factor(mod3$classification, levels = c(0,2,1)))) %>%
   pivot_longer(cols = 1:6, names_to = "Atributo", values_to = "Valor") %>% 
